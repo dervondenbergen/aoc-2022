@@ -50,6 +50,12 @@ const getCompartments = (rucksack) => {
     ]
 }
 
+/**
+ * 
+ * @param {Array<String>} rucksacks 
+ * @param {Int} size 
+ * @returns Array<Array<String>>
+ */
 const getNumberOfRucksacksTogether = (rucksacks, size) => {
     var packs = [];
     for (var i = 0; i < rucksacks.length; i += size) {
