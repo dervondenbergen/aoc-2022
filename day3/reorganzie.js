@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const runExample = false;
+const runExample = process.env.EXAMPLE ? true : false;
 
 var fileName = runExample ? "example" : "input";
 var fileContent = fs.readFileSync(`${__dirname}/${fileName}.txt`, { encoding: 'utf-8' });
@@ -94,7 +94,7 @@ const getBadgePriority = (rucksackContent) => {
     const rucksacks = rucksackContent.split("\n");
     
     const rucksacksTrios = getNumberOfRucksacksTogether(rucksacks, 3);
-    
+
     const wrongTypesForRucksacks = rucksacksTrios.map(rucksacks => {
         return findCommonType(findCommonType(rucksacks[0], rucksacks[1]), rucksacks[2])
     });
